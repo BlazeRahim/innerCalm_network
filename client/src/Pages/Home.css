@@ -1,0 +1,56 @@
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.homepage .title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.homepage .description {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.homepage .content {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.homepage .button {
+  background-color: #f44336;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  /* Styles for screens smaller than 768px */
+  .homepage .title {
+    font-size: 20px;
+  }
+
+  .homepage .description {
+    font-size: 14px;
+  }
+
+  .homepage .content {
+    font-size: 12px;
+  }
+}
