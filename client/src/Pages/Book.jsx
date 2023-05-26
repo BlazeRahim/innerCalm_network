@@ -14,6 +14,7 @@ const Book = () => {
   const [selectedTime, setSelectedTime] = useState(null);
 
   const navigate = useNavigate();
+  // eslint-disable-next-line
   const [userData, setuser] = useState({});
   const callAuth = async () => {
     try {
@@ -38,6 +39,7 @@ const Book = () => {
   };
   useEffect(() => {
     callAuth();
+    // eslint-disable-next-line
   }, [])
 
 
@@ -46,6 +48,7 @@ const Book = () => {
 
   useEffect(() => {
     fetchTherapists();
+    // eslint-disable-next-line
   }, []);
 
   const fetchTherapists = async () => {
