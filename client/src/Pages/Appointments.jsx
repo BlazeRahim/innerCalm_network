@@ -6,7 +6,7 @@ import "./apppoint.css";
 const Appointments = () => {
   const [appointments, setAppointments] = useState([]);
   const navigate = useNavigate();
-
+// eslint-disable-next-line
   const [userData, setuser] = useState({});
   const callAuth = async () => {
     try {
