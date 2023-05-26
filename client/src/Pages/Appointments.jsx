@@ -8,6 +8,7 @@ const Appointments = () => {
   const navigate = useNavigate();
   // eslint-disable-next-line
   const [userData, setuser] = useState({});
+  // eslint-disable-next-line
   const callAuth = async () => {
     try {
       const resFromBack = await fetch("https://innercalm-network-server.onrender.com/getdata", {
