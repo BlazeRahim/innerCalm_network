@@ -37,6 +37,7 @@ function ChatBot() {
   };
   useEffect(() => {
     callAuth();
+    // eslint-disable-next-line
   }, [])
 
   const [message, setMessage] = useState("");
