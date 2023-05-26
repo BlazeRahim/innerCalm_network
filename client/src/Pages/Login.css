@@ -1,0 +1,85 @@
+.loginpage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+}
+
+.loginform {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 13px 13px 26px #a8a8a8,
+        -13px -13px 26px #ffffff;
+}
+
+@media screen and (max-width:768px) {
+
+    .loginform {
+        width: 80%;
+    }
+}
+
+.loginform h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.detailslogin {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.submit-btn {
+    padding: 10px;
+    background-color: #00be4f;
+    background: rgb(0, 190, 79);
+    background: linear-gradient(46deg, rgba(0, 190, 79, 1) 0%, rgb(86, 237, 149) 98%);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.registerLink {
+    color: #3f94d2;
+    text-decoration: underline;
+}
+
+.regline {
+    margin: 20px 0px;
+    margin-bottom:0px;
+}
+
+.registerLink:hover {
+    text-decoration: none;
+}
+
+.submit-btn:hover {
+    background-color: #3f94d2;
+}
+
+label {
+    font-weight: bold;
+}
