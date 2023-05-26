@@ -31,6 +31,7 @@ const ChangePassword = () => {
   };
   useEffect(() => {
     callAuth();
+    // eslint-disable-next-line
   }, []);
 
   const handleChangePassword = async (e) => {
