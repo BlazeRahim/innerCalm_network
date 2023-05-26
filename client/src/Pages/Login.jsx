@@ -18,7 +18,7 @@ const Login = () => {
     }
 
     try {
-      const res = await fetch("/login", {
+      const res = await fetch("https://innercalm-network-server.onrender.com/login", {
         method: "POST",
         credentials: "include",
         headers: {

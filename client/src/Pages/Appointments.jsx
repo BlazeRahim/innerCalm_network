@@ -10,7 +10,7 @@ const Appointments = () => {
   const [userData, setuser] = useState({});
   const callAuth = async () => {
     try {
-      const resFromBack = await fetch("/getdata", {
+      const resFromBack = await fetch("https://innercalm-network-server.onrender.com/getdata", {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -35,7 +35,7 @@ const Appointments = () => {
 
   const fetchAppointments = async () => {
     try {
-      const response = await fetch("/appointments", {
+      const response = await fetch("https://innercalm-network-server.onrender.com/appointments", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

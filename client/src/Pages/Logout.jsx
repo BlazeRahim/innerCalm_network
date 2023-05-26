@@ -6,7 +6,7 @@ const Logout = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch('/logout', {
+      const response = await fetch('https://innercalm-network-server.onrender.com/logout', {
         method: 'GET',
         credentials: 'include',
       });

@@ -9,7 +9,7 @@ const MyProfile = () => {
     const navigate = useNavigate()
     const callProfilePage = async () => {
         try {
-            const resFromBack = await fetch('/myprofile', {
+            const resFromBack = await fetch('https://innercalm-network-server.onrender.com/myprofile', {
                 method: "GET",
                 headers: {
                     Accept: "application/json",

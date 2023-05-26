@@ -6,11 +6,12 @@ import homebg from "../components/homebg.jpeg";
 
 const Home = () => {
   const navigate = useNavigate();
+  // eslint-disable-next-line
   const [userData, setuser] = useState({});
 
   const callAuth = async () => {
     try {
-      const resFromBack = await fetch("/getdata", {
+      const resFromBack = await fetch("https://innercalm-network-server.onrender.com/getdata", {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -30,6 +31,7 @@ const Home = () => {
 
   useEffect(() => {
     callAuth();
+    // eslint-disable-next-line
   }, []);
 
   return (

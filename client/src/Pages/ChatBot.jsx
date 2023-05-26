@@ -15,7 +15,7 @@ function ChatBot() {
   const [userData, setuser] = useState({});
   const callAuth = async () => {
     try {
-      const resFromBack = await fetch("/getdata", {
+      const resFromBack = await fetch("https://innercalm-network-server.onrender.com/getdata", {
         method: "GET",
         headers: {
           Accept: "application/json",

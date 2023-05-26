@@ -11,7 +11,7 @@ const ChangePassword = () => {
   const [userData, setuser] = useState({});
   const callAuth = async () => {
     try {
-      const resFromBack = await fetch("/getdata", {
+      const resFromBack = await fetch("https://innercalm-network-server.onrender.com/getdata", {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -42,7 +42,7 @@ const ChangePassword = () => {
     }
 
     try {
-      const response = await fetch("/changepassword", {
+      const response = await fetch("https://innercalm-network-server.onrender.com/changepassword", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

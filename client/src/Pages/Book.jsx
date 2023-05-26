@@ -17,7 +17,7 @@ const Book = () => {
   const [userData, setuser] = useState({});
   const callAuth = async () => {
     try {
-      const resFromBack = await fetch("/getdata", {
+      const resFromBack = await fetch("https://innercalm-network-server.onrender.com/getdata", {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -50,7 +50,7 @@ const Book = () => {
 
   const fetchTherapists = async () => {
     try {
-      const response = await fetch("/therapists");
+      const response = await fetch("https://innercalm-network-server.onrender.com/therapists");
       const data = await response.json();
       const therapistsData = data.therapists;
       setTherapists(therapistsData);
@@ -87,7 +87,7 @@ const Book = () => {
 
       console.log(requestedDateTime)
       try {
-        const response = await fetch("/requestappointment", {
+        const response = await fetch("https://innercalm-network-server.onrender.com/requestappointment", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -17,7 +17,7 @@ const Register = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch('/registeruser', {
+            const response = await fetch('https://innercalm-network-server.onrender.com/registeruser', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
