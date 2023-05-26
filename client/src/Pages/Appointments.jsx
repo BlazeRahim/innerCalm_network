@@ -31,6 +31,7 @@ const Appointments = () => {
 
   useEffect(() => {
     callAuth();
+    // eslint-disable-next-line
   }, []);
 
   const fetchAppointments = async () => {
@@ -54,6 +55,7 @@ const Appointments = () => {
 
   useEffect(() => {
     fetchAppointments();
+    // eslint-disable-next-line
   }, []);
 
   const getStatusClassNameCard = (status) => {
