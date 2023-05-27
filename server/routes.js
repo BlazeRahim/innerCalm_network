@@ -152,9 +152,11 @@ router.post('/login', async (req, res) => {
 
             if (passwordMatch) {
                 const token = await user.generateAuthToken();
-                res.cookie("jwttoken", token, {
-                    expires: new Date(Date.now() + 186400000),
-                    httpOnly: true
+               res.cookie("jwttoken", token, {
+                  expires: new Date(Date.now() + 186400000),
+                  httpOnly: true,
+                  sameSite: 'none',  // Allow cross-site requests to include the cookie
+                  secure: true       // Ensure the cookie is only sent over HTTPS
                 });
                 if (user.isTherapist)
                     return res.status(200).json({ message: "Therapist login successful.", therapist: true });
