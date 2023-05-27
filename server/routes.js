@@ -97,9 +97,9 @@ router.get("/therapists", async (req, res) => {
 });
 
 router.post('/registerdr', async (req, res) => {
-    const { name, email, phone, password, cpassword, speciality, availableSlots } = req.body;
+    const { name, email, phone, password, cpassword, speciality } = req.body;
 
-    if (!name || !email || !phone || !password || !cpassword || !speciality || !availableSlots) {
+    if (!name || !email || !phone || !password || !cpassword || !speciality ) {
         return res.status(422).json({ error: "Fill all information to continue" });
     } else if (password !== cpassword) {
         return res.status(422).json({ error: "Password and cpassword are not the same." });
