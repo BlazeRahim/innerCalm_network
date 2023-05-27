@@ -62,6 +62,11 @@ const Appointments = () => {
     }
   };
 
+  useEffect(() => {
+    fetchAppointments();
+    // eslint-disable-next-line
+  }, []);
+
 
   const getStatusClassNameCard = (status) => {
     if (status === "Approved") {
