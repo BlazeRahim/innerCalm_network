@@ -9,26 +9,27 @@ const Appointments = () => {
   // eslint-disable-next-line
   const [userData, setuser] = useState({});
   const callAuth = async () => {
-    try {
-      const resFromBack = await fetch("https://innercalm-network-server.onrender.com/getdata", {
-        method: "GET",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      });
-      const userData = await resFromBack.json(); // Parse the response body as JSON
-      setuser(userData)
-      if (!userData.name) {
-        alert("Please login.")
-        navigate('/login')
-      }
-      // Perform any necessary actions with the user data
-    } catch (err) {
-      console.log(err);
+  try {
+    const resFromBack = await fetch("https://innercalm-network-server.onrender.com/getdata", {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+    });
+    const userData = await resFromBack.json(); // Parse the response body as JSON
+    setuser(userData);
+    if (!userData.name) {
+      alert("Please login.");
+      navigate('/login');
     }
-  };
+    // Perform any necessary actions with the user data
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 
   useEffect(() => {
     callAuth();
