@@ -5,6 +5,13 @@ const jwt = require("jsonwebtoken")
 const cors = require("cors");
 app.use(cors());
 
+app.options('*', cors({
+  origin: "https://innercalm-network.netlify.app",
+  methods: "GET, POST, PUT, DELETE",
+  allowedHeaders: "Content-Type, Authorization",
+  credentials: true,
+}));
+
 app.use(cors({
   origin: "https://innercalm-network.netlify.app",
   methods: "GET, POST, PUT, DELETE",
