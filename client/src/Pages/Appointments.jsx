@@ -44,7 +44,14 @@ const Appointments = () => {
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include", // Include credentials to send cookies
       });
+      if (response.status === 401) {
+        // Handle unauthorized error
+        console.log("Unauthorized");
+        setAppointments([]); // Set appointments to an empty array
+        return;
+      }
       const data = await response.json();
       console.log(data);
       setAppointments(data.userAppointments);
@@ -55,10 +62,6 @@ const Appointments = () => {
     }
   };
 
-  useEffect(() => {
-    fetchAppointments();
-    // eslint-disable-next-line
-  }, []);
 
   const getStatusClassNameCard = (status) => {
     if (status === "Approved") {
