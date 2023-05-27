@@ -8,9 +8,7 @@ const Appointments = () => {
   const navigate = useNavigate();
   // eslint-disable-next-line
   const [userData, setuser] = useState({});
-  // eslint-disable-next-line
   const callAuth = async () => {
-    console.log("call auth");
     try {
       const resFromBack = await fetch("https://innercalm-network-server.onrender.com/getdata", {
         method: "GET",
@@ -20,13 +18,13 @@ const Appointments = () => {
         },
         credentials: "include",
       });
-      const userData = await resFromBack.json();
-      console.log(userData);
-      setuser(userData);
+      const userData = await resFromBack.json(); // Parse the response body as JSON
+      setuser(userData)
       if (!userData.name) {
-        alert("Please login.");
-        navigate("/login");
+        alert("Please login.")
+        navigate('/login')
       }
+      // Perform any necessary actions with the user data
     } catch (err) {
       console.log(err);
     }
