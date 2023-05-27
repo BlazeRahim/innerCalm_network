@@ -4,21 +4,15 @@ const app = express();
 const jwt = require("jsonwebtoken")
 const cors = require("cors");
 app.use(cors());
-app.use(express.json())
 
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://innercalm-network.netlify.app');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    res.setHeader('Access-Control-Allow-Credentials', 'true');
-    
-    // Handle preflight request
-    if (req.method === 'OPTIONS') {
-        res.status(200).end();
-    } else {
-        next();
-    }
-});
+app.use(cors({
+  origin: "https://innercalm-network.netlify.app",
+  methods: "GET, POST, PUT, DELETE",
+  allowedHeaders: "Content-Type, Authorization",
+  credentials: true
+}));
+
+app.use(express.json())
 
 
 // const db =  process.env.DATABASE;
