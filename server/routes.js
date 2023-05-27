@@ -119,6 +119,7 @@ router.post('/registerdr', async (req, res) => {
             phone,
             password: hashedPassword,
             cpassword: hashedPassword,
+            speciality
         });
 
         await user.save();
