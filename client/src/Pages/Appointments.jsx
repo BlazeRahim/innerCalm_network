@@ -46,6 +46,7 @@ const Appointments = () => {
         },
       });
       const data = await response.json();
+      console.log(data);
       setAppointments(data.userAppointments);
     } catch (error) {
       console.log(error);
