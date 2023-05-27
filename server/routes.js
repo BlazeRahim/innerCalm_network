@@ -7,7 +7,6 @@ const jwt = require("jsonwebtoken")
 const authenticate = require("./auth")
 const cors = require("cors");
 const app = express();
-app.use(cors());
 app.options('*', cors({
   origin: "https://innercalm-network.netlify.app",
   methods: "GET, POST, PUT, DELETE",
