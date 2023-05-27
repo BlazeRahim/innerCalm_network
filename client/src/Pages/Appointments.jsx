@@ -14,7 +14,6 @@ const Appointments = () => {
     try {
       const resFromBack = await fetch("https://innercalm-network-server.onrender.com/getdata", {
         method: "GET",
-        credentials: 'include',
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
