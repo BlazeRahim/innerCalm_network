@@ -5,6 +5,19 @@ const cors = require("cors");
 const express = require("express");
 const app = express();
 app.use(cors());
+app.options('*', cors({
+  origin: "https://innercalm-network.netlify.app",
+  methods: "GET, POST, PUT, DELETE",
+  allowedHeaders: "Content-Type, Authorization",
+  credentials: true,
+}));
+
+app.use(cors({
+  origin: "https://innercalm-network.netlify.app",
+  methods: "GET, POST, PUT, DELETE",
+  allowedHeaders: "Content-Type, Authorization",
+  credentials: true
+}));
 const userSchema = mongoose.Schema({
     name: { type: String, required: true },
     email: { type: String, required: true },
