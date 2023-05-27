@@ -10,6 +10,7 @@ const Appointments = () => {
   const [userData, setuser] = useState({});
   // eslint-disable-next-line
   const callAuth = async () => {
+    console.log("cal auth")
     try {
       const resFromBack = await fetch("https://innercalm-network-server.onrender.com/getdata", {
         method: "GET",
@@ -20,6 +21,7 @@ const Appointments = () => {
         credentials: "include",
       });
       const userData = await resFromBack.json();
+      console.log(userData)
       setuser(userData);
       if (!userData.name) {
         alert("Please login.");
