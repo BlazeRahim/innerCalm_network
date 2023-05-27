@@ -3,7 +3,6 @@ const User = require("./schema")
 const cors = require("cors");
 const express = require("express")
 const app = express();
-app.use(cors());
 const authenticate = async (req, res, next) => {
     // const secretkey =  process.env.secretkey;
     const secretkey =  "innercalm" ;
