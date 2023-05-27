@@ -22,7 +22,7 @@ app.use(cors({
 }));
 
 require("./schema")
-
+app.use(cookieParser());
 const User = require("./schema")
 router.use(cookieParser())
 
