@@ -92,7 +92,7 @@ const Appointments = () => {
       <div className="appointmentspage">
         <h2>My Appointments</h2>
         <div className="appointmentList">
-          {appointments.length > 0 ? (
+          {appointments ? (
             appointments.map((appointment) => (
               <div
                 key={appointment._id}
