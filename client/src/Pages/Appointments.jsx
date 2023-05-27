@@ -4,13 +4,13 @@ import Nav from "../components/Nav";
 import "./apppoint.css";
 
 const Appointments = () => {
-  const [appointments, setAppointments] = useState([]); // Initialize with an empty array
+  const [appointments, setAppointments] = useState(null); // Initialize with null
   const navigate = useNavigate();
   // eslint-disable-next-line
   const [userData, setuser] = useState({});
   // eslint-disable-next-line
   const callAuth = async () => {
-    console.log("cal auth")
+    console.log("call auth");
     try {
       const resFromBack = await fetch("https://innercalm-network-server.onrender.com/getdata", {
         method: "GET",
@@ -21,7 +21,7 @@ const Appointments = () => {
         credentials: "include",
       });
       const userData = await resFromBack.json();
-      console.log(userData)
+      console.log(userData);
       setuser(userData);
       if (!userData.name) {
         alert("Please login.");
@@ -49,6 +49,8 @@ const Appointments = () => {
       setAppointments(data.userAppointments);
     } catch (error) {
       console.log(error);
+      // Handle the error condition
+      setAppointments([]);
     }
   };
 
@@ -84,15 +86,18 @@ const Appointments = () => {
       return "";
     }
   };
-  // eslint-disable-next-line
+
   const options = { day: '2-digit', month: '2-digit', year: '2-digit' };
+
   return (
     <>
       <Nav />
       <div className="appointmentspage">
         <h2>My Appointments</h2>
         <div className="appointmentList">
-          {appointments.length > 0 ? (
+          {appointments === null ? ( // Render a loading state while fetching data
+            <p>Loading appointments...</p>
+          ) : appointments.length > 0 ? (
             appointments.map((appointment) => (
               <div
                 key={appointment._id}
@@ -101,11 +106,7 @@ const Appointments = () => {
                 <div className="appointmentDetails">
                   <div className="detailItem">
                     <span className="itemLabel">Date:</span>
-                    <span>{new Date(appointment.date).toLocaleDateString('en-GB', {
-                    day: '2-digit',
-                    month: 'short',
-                    year: '2-digit',
-                  })}</span>
+                    <span>{new Date(appointment.date).toLocaleDateString('en-GB', options)}</span>
                   </div>
                   <div className="detailItem">
                     <span className="itemLabel">Time:</span>
@@ -113,8 +114,7 @@ const Appointments = () => {
                   </div>
                   <div className="detailItem">
                     <span className="itemLabel">Status:</span>
-                    <span className={getStatusClassNameSpan(appointment.status)}
-                    >{appointment.status}</span>
+                    <span className={getStatusClassNameSpan(appointment.status)}>{appointment.status}</span>
                   </div>
                   <div className="detailItem">
                     <span className="itemLabel">Therapist:</span>
