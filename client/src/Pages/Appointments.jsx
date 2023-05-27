@@ -4,7 +4,7 @@ import Nav from "../components/Nav";
 import "./apppoint.css";
 
 const Appointments = () => {
-  const [appointments, setAppointments] = useState([]);
+  const [appointments, setAppointments] = useState([{hello : "world"}]);
   const navigate = useNavigate();
   // eslint-disable-next-line
   const [userData, setuser] = useState({});
@@ -92,7 +92,7 @@ const Appointments = () => {
       <div className="appointmentspage">
         <h2>My Appointments</h2>
         <div className="appointmentList">
-          {appointments[0] ? (
+          {appointments.length > 0 ? (
             appointments.map((appointment) => (
               <div
                 key={appointment._id}
