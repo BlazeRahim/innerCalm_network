@@ -213,7 +213,12 @@ router.post('/contact', authenticate, async (req, res) => {
 
 router.get('/logout', (req, res) => {
     console.log("Logout page");
-    res.clearCookie("jwttoken", { path: '/' })
+     res.clearCookie('jwttoken', {
+      path: '/',
+      httpOnly: true,
+      sameSite: 'none',
+      secure: true,
+  });
     res.status(200).send("logged out")
 })
 
