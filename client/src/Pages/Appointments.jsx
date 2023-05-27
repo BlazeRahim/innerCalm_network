@@ -4,7 +4,7 @@ import Nav from "../components/Nav";
 import "./apppoint.css";
 
 const Appointments = () => {
-  const [appointments, setAppointments] = useState([{hello : "world"}]);
+  const [appointments, setAppointments] = useState([]); // Initialize with an empty array
   const navigate = useNavigate();
   // eslint-disable-next-line
   const [userData, setuser] = useState({});
