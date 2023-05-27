@@ -154,7 +154,7 @@ const Book = () => {
             <h3>Selected Therapist:</h3>
             <p>Name: {selectedTherapist.name}</p>
             <p>Email: {selectedTherapist.email}</p>
-            <p>Phone: {selectedTherapist.speciality}</p>
+            <p>Speciality: {selectedTherapist.speciality}</p>
             {/* Display additional therapist information if needed */}
             <div>
               <h3>Select a Time Slot:</h3>
