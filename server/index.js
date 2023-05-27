@@ -11,8 +11,15 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     res.setHeader('Access-Control-Allow-Credentials', 'true');
-    next();
-  });
+    
+    // Handle preflight request
+    if (req.method === 'OPTIONS') {
+        res.status(200).end();
+    } else {
+        next();
+    }
+});
+
 
 // const db =  process.env.DATABASE;
 const db = "mongodb+srv://innercalm:innercalm@innercalm.hyeb5s1.mongodb.net/test";
