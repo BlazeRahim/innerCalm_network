@@ -4,21 +4,15 @@ const app = express();
 const jwt = require("jsonwebtoken")
 const cors = require("cors");
 app.use(cors());
-
-app.options('*', cors({
-  origin: "https://innercalm-network.netlify.app",
-  methods: "GET, POST, PUT, DELETE",
-  allowedHeaders: "Content-Type, Authorization",
-  credentials: true,
-}));
-
-app.use(cors({
-  origin: "https://innercalm-network.netlify.app",
-  methods: "GET, POST, PUT, DELETE",
-  allowedHeaders: "Content-Type, Authorization",
-  credentials: true
-}));
-
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "*");
+  if (req.method === "OPTIONS") {
+    res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
+    return res.status(200).json({});
+  }
+  next();
+});
 app.use(express.json())
 
 
