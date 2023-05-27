@@ -44,10 +44,6 @@ const Appointments = () => {
         },
       });
       const data = await response.json();
-      if (response.status !== 200 || !data) {
-        window.alert("Please log in");
-        navigate("/login");
-      }
       setAppointments(data.userAppointments);
     } catch (error) {
       console.log(error);
